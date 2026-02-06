@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Для моей Любимой ❤️</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Marck+Script&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  
+
+  <h1>Для моей Любимой ❤️</h1>
+
+  <!-- Кнопка "Моя" -->
+  <div class="my-button-container">
+    <button class="my-button" onclick="toggleGallery()">Моя ❤️</button>
+  </div>
+
+  <!-- Новая галерея -->
+  <div class="beautiful-gallery" id="beautifulGallery">
+    <div class="gallery-header">
+      <h2>Моя любимая</h2>
+      <button class="close-gallery" onclick="toggleGallery()">×</button>
+    </div>
+    <div class="gallery-grid">
+      <div class="gallery-item" onclick="openFullscreen(this)">
+        <img src="assets/images/gallery/1.jpg" alt="Фото 1">
+        <div class="gallery-caption">Ты - мое вдохновение❤️</div>
+      </div>
+      <div class="gallery-item" onclick="openFullscreen(this)">
+        <img src="assets/images/gallery/2.jpg" alt="Фото 2">
+        <div class="gallery-caption">Моя любовь❤️</div>
+      </div>
+      <div class="gallery-item" onclick="openFullscreen(this)">
+        <img src="assets/images/gallery/3.jpg" alt="Фото 3">
+        <div class="gallery-caption">Моя радость❤️</div>
+      </div>
+      <div class="gallery-item" onclick="openFullscreen(this)">
+        <img src="assets/images/gallery/4.jpg" alt="Фото 4">
+        <div class="gallery-caption">Мое счастье❤️</div>
+      </div>
+      <div class="gallery-item" onclick="openFullscreen(this)">
+        <img src="assets/images/gallery/5.jpg" alt="Фото 5">
+        <div class="gallery-caption">Моя мечта❤️</div>
+      </div>
+      <div class="gallery-item" onclick="openFullscreen(this)">
+        <img src="assets/images/gallery/6.jpg" alt="Фото 6">
+        <div class="gallery-caption">Моя жизнь❤️</div>
+      </div>
+      <div class="gallery-item" onclick="openFullscreen(this)">
+        <img src="assets/images/gallery/7.jpg" alt="Фото 7">
+        <div class="gallery-caption">Моя судьба❤️</div>
+      </div>
+      <div class="gallery-item" onclick="openFullscreen(this)">
+        <img src="assets/images/gallery/8.jpg" alt="Фото 8">
+        <div class="gallery-caption">Моя вечность❤️</div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <!-- Полноэкранный просмотр фото -->
+  <div class="fullscreen-viewer" id="fullscreenViewer">
+    <button class="close-fullscreen" onclick="closeFullscreen()">×</button>
+    <button class="nav-btn prev-btn" onclick="navigatePhoto(-1)">❮</button>
+    <button class="nav-btn next-btn" onclick="navigatePhoto(1)">❯</button>
+    <img id="fullscreenImage" src="" alt="Fullscreen view">
+    <div class="fullscreen-caption"></div>
+  </div>
+
+  <!-- Мини-кнопки управления музыкой -->
+  <div class="mini-music-btns" id="miniMusicBtns" style="display:none;">
+    <button class="mini-music-btn" id="miniPlayPauseBtn" onclick="togglePlay()">
+      <span id="miniPlayPauseIcon"></span>
+    </button>
+    <button class="mini-music-btn" id="miniShowPlayerBtn" onclick="showMusicPlayer()" style="display:none;">
+      <svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="10" cy="10" r="9" stroke="#d6336c" stroke-width="2" fill="#fff"/>
+        <rect x="7" y="6" width="6" height="8" rx="1.5" fill="#d6336c"/>
+        <rect x="9" y="8" width="2" height="4" rx="1" fill="#fff"/>
+      </svg>
+    </button>
+  </div>
+
+  <!-- Падающие сердечки -->
+  <script>
+    for (let i = 0; i < 30; i++) {
+      const heart = document.createElement('div');
+      heart.className = 'heart';
+      heart.innerHTML = '❤️';
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.fontSize = Math.random() * 30 + 20 + 'px';
+      heart.style.animationDuration = (Math.random() * 5 + 5) + 's';
+      heart.style.animationDelay = Math.random() * 5 + 's';
+      document.body.appendChild(heart);
+    }
+  </script>
+
+  <!-- Галерея -->
+  <div class="gallery">
+
+    <!-- Фото 1 -->
+    <div class="flip-card" onclick="this.classList.toggle('flipped')">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="assets/images/1.jpg" alt="Фото 1">
+        </div>
+        <div class="flip-card-back">
+          <p>Ты — свет, что в сердце мне сияет,<br>И каждый день с тобой — как сон.<br>Моя душа с твоей играет<br>На струнах нежности вдвоем.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Фото 2 — Твоё -->
+    <div class="flip-card" onclick="this.classList.toggle('flipped')">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="assets/images/2.jpg" alt="Фото 2">
+        </div>
+        <div class="flip-card-back">
+          <p>Навсегда твой. Без условий, границ и сомнений.<br>Ты — мой смысл. Моё всё. Моя бесконечность.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Фото 3 -->
+    <div class="flip-card" onclick="this.classList.toggle('flipped')">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="assets/images/3.jpg" alt="Фото 3">
+        </div>
+        <div class="flip-card-back">
+          <p>Ты — как весна, что всё цветёт,<br>Ты — как рассвет среди тревог.<br>Ты — мой чудесный поворот,<br>Ты — счастье, посланное Бог.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Фото 4 — Твоё -->
+    <div class="flip-card" onclick="this.classList.toggle('flipped')">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="assets/images/4.jpg" alt="Фото 4">
+        </div>
+        <div class="flip-card-back">
+          <p>Я принадлежу тебе — сердцем и душой.<br>Ты — мой мир, моя вечность, моя любовь.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Итоговый стих -->
+  <div class="final-poem">
+    <p>
+      Ты в каждом взгляде, в каждом сне,<br>
+      Ты в каждой капле тишины.<br>
+      С тобой я стал собой вполне —<br>
+      В тебе я обретаю сны.<br><br>
+
+      Ты — моя радость, вдохновенье,<br>
+      Ты — мой рассвет и каждый миг.<br>
+      И пусть весь мир прольёт сомненья —<br>
+      Я за тебя, любимая, навек велик.
+    </p>
+  </div>
+
+  <!-- Фоновая музыка -->
+  <div class="music-player">
+    <div class="player-controls">
+      <button onclick="previousTrack()" class="control-btn" title="Предыдущий трек">
+        <svg viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="14" cy="14" r="13" fill="#fff" stroke="#d6336c" stroke-width="2"/>
+          <polygon points="17,8 17,20 9,14" fill="#d6336c"/>
+          <rect x="7" y="8" width="2" height="12" rx="1" fill="#d6336c"/>
+        </svg>
+      </button>
+      <button onclick="togglePlay()" class="control-btn" id="playPauseBtn" title="Воспроизвести/Пауза">
+        <span id="mainPlayPauseIcon"></span>
+      </button>
+      <button onclick="nextTrack()" class="control-btn" title="Следующий трек">
+        <svg viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="14" cy="14" r="13" fill="#fff" stroke="#d6336c" stroke-width="2"/>
+          <polygon points="11,8 11,20 19,14" fill="#d6336c"/>
+          <rect x="19" y="8" width="2" height="12" rx="1" fill="#d6336c"/>
+        </svg>
+      </button>
+      <button onclick="hideMusicPlayer()" class="control-btn close-music-player" title="Скрыть плеер">
+        <svg viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="14" cy="14" r="13" fill="#fff" stroke="#d6336c" stroke-width="2"/>
+          <line x1="9" y1="9" x2="19" y2="19" stroke="#d6336c" stroke-width="2" stroke-linecap="round"/>
+          <line x1="19" y1="9" x2="9" y2="19" stroke="#d6336c" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </div>
+    <div class="playlist">
+      <div class="now-playing">Сейчас играет: <span id="currentTrack">-</span></div>
+      <ul id="playlist">
+        <!-- Треки будут добавлены через JavaScript -->
+      </ul>
+    </div>
+  </div>
+
+  <!-- Скрипты сайта (перемещён в самый конец) -->
+  <script>
+    const playlist = [
+      {
+        title: "Леша Свик - Луна",
+        file: "assets/music/Леша Свик - Луна.mp3"
+      },
+      {
+        title: "Soon, My Love",
+        file: "assets/music/Soon, My Love❤️ (1) (1).mp3"
+      },
+      {
+        title: "Бессонница",
+        file: "assets/music/Бессонница .mp3"
+      },
+      {
+        title: "Весна",
+        file: "assets/music/Весна.mp3"
+      },
+      {
+        title: "Навсегда с тобой",
+        file: "assets/music/Навсегда с тобой .mp3"
+      },
+      {
+        title: "Я сильно скучаю по тебе....",
+        file: "assets/music/Я сильно скучаю по тебе.... (2).mp3"
+      },
+      {
+        title: "JONY-Рядом",
+        file: "assets/music/JONY-Рядом.mp3"
+      },
+
+    ];
+
+    let currentTrackIndex = 0;
+    const audio = new Audio();
+    const playPauseBtn = document.getElementById('playPauseBtn');
+    const currentTrackSpan = document.getElementById('currentTrack');
+    const playlistElement = document.getElementById('playlist');
+
+    // Создаем элементы плейлиста
+    playlist.forEach((track, index) => {
+      const li = document.createElement('li');
+      li.textContent = track.title;
+      li.onclick = () => playTrack(index);
+      playlistElement.appendChild(li);
+    });
+
+    function playTrack(index) {
+      currentTrackIndex = index;
+      audio.src = playlist[index].file;
+      audio.play();
+      updatePlayPauseButton();
+      updateCurrentTrack();
+    }
+
+    function togglePlay() {
+      if (audio.paused) {
+        audio.play();
+      } else {
+        audio.pause();
+      }
+      updatePlayPauseButton();
+    }
+
+    function updatePlayPauseButton() {
+      // Для основного плеера
+      const mainPlayPauseIcon = document.getElementById('mainPlayPauseIcon');
+      if (mainPlayPauseIcon) {
+        if (audio.paused) {
+          mainPlayPauseIcon.innerHTML = `<svg viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="14" cy="14" r="13" fill="#fff" stroke="#d6336c" stroke-width="2"/><polygon points="11,9 20,14 11,19" fill="#d6336c"/></svg>`;
+        } else {
+          mainPlayPauseIcon.innerHTML = `<svg viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="14" cy="14" r="13" fill="#fff" stroke="#d6336c" stroke-width="2"/><rect x="10" y="9" width="3" height="10" rx="1" fill="#d6336c"/><rect x="15" y="9" width="3" height="10" rx="1" fill="#d6336c"/></svg>`;
+        }
+      }
+      // Для мини-кнопки
+      const miniPlayPauseIcon = document.getElementById('miniPlayPauseIcon');
+      if (miniPlayPauseIcon) {
+        if (audio.paused) {
+          miniPlayPauseIcon.innerHTML = `<svg width="16" height="16" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="10" cy="10" r="9" stroke="#d6336c" stroke-width="2" fill="#fff"/><polygon points="8,6 15,10 8,14" fill="#d6336c"/></svg>`;
+        } else {
+          miniPlayPauseIcon.innerHTML = `<svg width="16" height="16" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="10" cy="10" r="9" stroke="#d6336c" stroke-width="2" fill="#fff"/><rect x="7" y="6" width="2.5" height="8" rx="1" fill="#d6336c"/><rect x="11" y="6" width="2.5" height="8" rx="1" fill="#d6336c"/></svg>`;
+        }
+      }
+    }
+
+    function updateCurrentTrack() {
+      currentTrackSpan.textContent = playlist[currentTrackIndex].title;
+    }
+
+    function nextTrack() {
+      currentTrackIndex = (currentTrackIndex + 1) % playlist.length;
+      playTrack(currentTrackIndex);
+    }
+
+    function previousTrack() {
+      currentTrackIndex = (currentTrackIndex - 1 + playlist.length) % playlist.length;
+      playTrack(currentTrackIndex);
+    }
+
+    // Автоматическое воспроизведение следующего трека
+    audio.addEventListener('ended', nextTrack);
+
+    // Начинаем воспроизведение первого трека
+    playTrack(0);
+
+    // Изначально скрываем мини-кнопку "показать плеер"
+    document.getElementById('miniShowPlayerBtn').style.display = 'none';
+
+    // Функция для открытия/закрытия галереи
+    function toggleGallery() {
+      const gallery = document.getElementById('beautifulGallery');
+      const musicPlayer = document.querySelector('.music-player');
+      const miniMusicBtns = document.getElementById('miniMusicBtns');
+      const miniShowPlayerBtn = document.getElementById('miniShowPlayerBtn');
+      
+      gallery.classList.toggle('active');
+      document.body.classList.toggle('gallery-open');
+
+      if (gallery.classList.contains('active')) {
+        // Галерея открыта: скрываем основной плеер
+        musicPlayer.classList.add('hide');
+        // Показываем мини-кнопки (если еще не показаны)
+        miniMusicBtns.style.display = 'flex';
+        // Показываем кнопку "показать плеер"
+        miniShowPlayerBtn.style.display = 'inline-flex';
+        updatePlayPauseButton(); // Обновляем состояние play/pause
+      } else {
+        // Галерея закрыта: показываем основной плеер
+        musicPlayer.classList.remove('hide');
+        // Скрываем кнопку "показать плеер"
+        miniShowPlayerBtn.style.display = 'none';
+        updatePlayPauseButton(); // Обновляем состояние play/pause
+      }
+    }
+
+    // Закрытие галереи по клику вне её области
+    document.addEventListener('click', function(event) {
+      const gallery = document.getElementById('beautifulGallery');
+      const myButton = document.querySelector('.my-button');
+      if (gallery.classList.contains('active') && 
+          !gallery.contains(event.target) && 
+          !myButton.contains(event.target)) {
+        gallery.classList.remove('active');
+        document.body.classList.remove('gallery-open');
+        // Показываем плеер обратно
+        document.querySelector('.music-player').classList.remove('hide');
+      }
+    });
+
+    // Обработка нажатия Escape
+    document.addEventListener('keydown', function(event) {
+      if (event.key === 'Escape') {
+        const gallery = document.getElementById('beautifulGallery');
+        if (gallery.classList.contains('active')) {
+          gallery.classList.remove('active');
+          document.body.classList.remove('gallery-open');
+          // Показываем плеер обратно
+          document.querySelector('.music-player').classList.remove('hide');
+        }
+      }
+    });
+
+    // Функции для полноэкранного просмотра
+    let currentPhotoIndex = 0;
+    const galleryItems = document.querySelectorAll('.gallery-item');
+
+    function openFullscreen(element) {
+      const viewer = document.getElementById('fullscreenViewer');
+      const fullscreenImage = document.getElementById('fullscreenImage');
+      const caption = document.querySelector('.fullscreen-caption');
+      
+      currentPhotoIndex = Array.from(galleryItems).indexOf(element);
+      const img = element.querySelector('img');
+      const imgCaption = element.querySelector('.gallery-caption');
+      
+      fullscreenImage.src = img.src;
+      caption.textContent = imgCaption.textContent;
+      
+      viewer.classList.add('active');
+      document.body.classList.add('fullscreen-open');
+    }
+
+    function closeFullscreen() {
+      const viewer = document.getElementById('fullscreenViewer');
+      viewer.classList.remove('active');
+      document.body.classList.remove('fullscreen-open');
+    }
+
+    function navigatePhoto(direction) {
+      currentPhotoIndex = (currentPhotoIndex + direction + galleryItems.length) % galleryItems.length;
+      const newElement = galleryItems[currentPhotoIndex];
+      const img = newElement.querySelector('img');
+      const caption = newElement.querySelector('.gallery-caption');
+      
+      const fullscreenImage = document.getElementById('fullscreenImage');
+      const fullscreenCaption = document.querySelector('.fullscreen-caption');
+      
+      fullscreenImage.src = img.src;
+      fullscreenCaption.textContent = caption.textContent;
+    }
+
+    // Закрытие полноэкранного просмотра по клику вне изображения
+    document.getElementById('fullscreenViewer').addEventListener('click', function(event) {
+      if (event.target === this) {
+        closeFullscreen();
+      }
+    });
+
+    // Навигация по клавишам
+    document.addEventListener('keydown', function(event) {
+      if (document.body.classList.contains('fullscreen-open')) {
+        if (event.key === 'Escape') {
+          closeFullscreen();
+        } else if (event.key === 'ArrowLeft') {
+          navigatePhoto(-1);
+        } else if (event.key === 'ArrowRight') {
+          navigatePhoto(1);
+        }
+      }
+    });
+
+    // Функция для скрытия основного плеера (по кнопке 'x')
+    function hideMusicPlayer() {
+      const musicPlayer = document.querySelector('.music-player');
+      const miniMusicBtns = document.getElementById('miniMusicBtns');
+      const miniShowPlayerBtn = document.getElementById('miniShowPlayerBtn');
+
+      musicPlayer.classList.add('hide'); // Скрываем основной плеер
+      // Показываем мини-кнопки (если еще не показаны)
+      miniMusicBtns.style.display = 'flex';
+      // Показываем кнопку "показать плеер"
+      miniShowPlayerBtn.style.display = 'inline-flex';
+      updatePlayPauseButton(); // Обновляем состояние play/pause
+    }
+
+    // Функция для показа основного плеера (по мини-кнопке '🎵')
+    function showMusicPlayer() {
+      const musicPlayer = document.querySelector('.music-player');
+      const miniMusicBtns = document.getElementById('miniMusicBtns');
+      const miniShowPlayerBtn = document.getElementById('miniShowPlayerBtn');
+
+      musicPlayer.classList.remove('hide'); // Показываем основной плеер
+      // Скрываем кнопку "показать плеер"
+      miniShowPlayerBtn.style.display = 'none';
+      // Блок мини-кнопок остается видимым, только кнопка play/pause видна
+      updatePlayPauseButton(); // Обновляем состояние play/pause
+    }
+
+    // Обновляем иконку play/pause при загрузке страницы
+    updatePlayPauseButton();
+  </script>
+
+</body>
+</html>
